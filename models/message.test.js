@@ -25,7 +25,7 @@ describe("Messages model", () => {
     expect(messages.get()).toMatchObject([
       { text: "lorem ipsum", user: "example1", id: 1 },
     ]);
-    expect(messages.get()[0]).toHaveProperty("date");
+    expect(messages.get(1)).toHaveProperty("date");
   });
   it("should remove message with given id on remove() method call", () => {
     const messages = new Messages();
