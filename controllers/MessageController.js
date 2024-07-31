@@ -16,4 +16,11 @@ module.exports = {
   getMessages(req, res) {
     res.render("index", { title: "Online Cafe", messages: Messages.get() });
   },
+  addMessage(req, res) {
+    Messages.add({
+      text: req.body.message,
+      user: req.body.username,
+    });
+    res.redirect("/");
+  },
 };
