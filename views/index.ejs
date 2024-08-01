@@ -4,15 +4,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Online Cafe</title>
   </head>
   <body>
-    <h1><%=title %></h1>
-    <h2>Messages:</h2>
-    <ul>
-      <% messages.map(message=>{ %>
-      <li><%=message.text %></li>
-      <%}) %>
-    </ul>
+    <div class="left">
+      <h1><%=title %></h1>
+      <p>
+        Get in touch with everyone in the world! Just click "new message" and
+        write what you have in mind
+      </p>
+      <h2>Regulations</h2>
+      <ul>
+        <li>No hate speech</li>
+        <li>No homophobic or sexist things</li>
+        <li>Be kind and friendly to others</li>
+      </ul>
+      <a id="new-message-btn" href="/new">Write new message</a>
+    </div>
+    <div class="right">
+      <h2>Messages</h2>
+      <ul>
+        <% messages.map(message=>{ %>
+        <li>
+          <p><%= message.user %></p>
+          <p>
+            <%= Math.floor((Date.now() - message.date) / 1000 / 60)%> min ago
+          </p>
+          <p><%= message.text %></p>
+        </li>
+        <%}) %>
+      </ul>
+    </div>
   </body>
 </html>
