@@ -1,0 +1,39 @@
+:root {
+  /* background colors */
+  --background-normal: rgb(48, 48, 48);
+  --background-darker: rgb(39, 39, 39);
+  --background-lighter: rgb(54, 54, 54);
+
+  /* text colors */
+  --text-normal: rgb(160, 160, 160);
+  --text-darker: rgb(112, 112, 112);
+  --text-lighter: rgb(212, 212, 212);
+  --text-white: white;
+
+  /* accent colors */
+  --accent-yellow: rgb(224, 213, 160);
+  --accent-green: rgb(54, 200, 117);
+
+  /* border radius */
+  --border-radius-sm: 5px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 15px;
+
+  /* spacing */
+
+  --spacing-sm: 5px;
+  --spacing-md: 10px;
+  --spacing-lg: 15px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 25px;
+
+  /* font */
+
+  --text-sm: 0.75rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5em;
+  --text-2xl: 2rem;
+  --text-3xl: 3rem;
+  font-size: 18px;
+}
