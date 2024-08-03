@@ -26,11 +26,13 @@
       <h2>Messages</h2>
       <ul>
         <% messages.map(message=>{ %>
-        <li>
-          <p><%= message.user %></p>
-          <p>
-            <%= Math.floor((Date.now() - message.date) / 1000 / 60)%> min ago
-          </p>
+        <li class="message">
+          <div class="message-credits">
+            <h3><%= message.user %></h3>
+            <p>
+              <%= Math.floor((Date.now() - message.date) / 1000 / 60)%> min ago
+            </p>
+          </div>
           <p><%= message.text %></p>
         </li>
         <%}) %>

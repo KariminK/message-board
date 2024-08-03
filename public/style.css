@@ -22,3 +22,30 @@ body {
 
   background-color: var(--background-lighter);
 }
+
+.right {
+  background-color: var(--background-darker);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-2xl);
+  color: var(--text-lighter);
+  height: 90vh;
+  overflow: hidden;
+}
+.right ul {
+  list-style-type: none;
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-normal);
+  border-radius: var(--border-radius-md);
+  margin: var(--spacing-2xl) 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.message-credits {
+  display: flex;
+  background-color: var(--background-lighter);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xl);
+  justify-content: space-between;
+}
