@@ -28,24 +28,52 @@ body {
   border-radius: var(--border-radius-md);
   padding: var(--spacing-2xl);
   color: var(--text-lighter);
-  height: 90vh;
+  height: 100%;
   overflow: hidden;
+  border: 2px solid var(--accent-green);
 }
+
 .right ul {
   list-style-type: none;
+  height: 100%;
+  overflow: auto;
+}
+.right ul::-webkit-scrollbar {
+  display: none;
 }
 .message {
   display: flex;
   flex-direction: column;
-  background-color: var(--background-normal);
+  background-color: var(--background-lighter);
   border-radius: var(--border-radius-md);
-  margin: var(--spacing-2xl) 0px;
+  margin: var(--spacing-2xl) var(--spacing-sm);
   font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  transition: box-shadow 200ms;
+}
+.message:hover {
+  box-shadow: 0px 0px var(--spacing-xl) var(--accent-green);
 }
 .message-credits {
   display: flex;
-  background-color: var(--background-lighter);
-  border-radius: var(--border-radius-md);
-  padding: var(--spacing-xl);
+  border-bottom: 3px solid var(--background-normal);
+  padding: var(--spacing-lg);
   justify-content: space-between;
+}
+
+/* Message date */
+.message-credits p {
+  color: var(--text-darker);
+  font-size: var(--text-md);
+}
+
+/* Username */
+.message-credits h3 {
+  color: var(--text-normal);
+  font-weight: normal;
+  font-size: var(--text-md);
+}
+.message-text {
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  font-size: var(--text-lg);
 }
