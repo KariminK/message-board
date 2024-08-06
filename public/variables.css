@@ -37,3 +37,27 @@
   --text-3xl: 3rem;
   font-size: 18px;
 }
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Condensed", sans-serif;
+}
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  gap: var(--spacing-2xl);
+  padding: var(--spacing-2xl);
+
+  background-color: var(--background-lighter);
+}
