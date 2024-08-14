@@ -15,6 +15,10 @@
   list-style-type: none;
   height: 100%;
   overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-sm) 0px;
 }
 .right ul::-webkit-scrollbar {
   display: none;

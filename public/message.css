@@ -3,7 +3,7 @@
   flex-direction: column;
   background-color: var(--background-lighter);
   border-radius: var(--border-radius-md);
-  margin: var(--spacing-2xl) var(--spacing-sm);
+  margin: 0px var(--spacing-sm);
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
   transition: box-shadow 200ms;
