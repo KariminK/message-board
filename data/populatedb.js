@@ -12,6 +12,7 @@ async function populatedb() {
   console.log("started populating db");
   const client = new Client({
     connectionString: process.env.CONNECTION_STRING,
+    ssl: true,
   });
   await client.connect();
   await client.query(query);
