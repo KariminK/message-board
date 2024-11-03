@@ -1,30 +1,29 @@
+const db = require("../data/pool");
 class MessageModel {
-  #messages;
-  #idCounter;
-  constructor() {
-    this.#messages = [];
-    this.#idCounter = 1;
+  #db;
+  constructor(db) {
+    this.#db = db;
   }
-  get(id) {
-    if (!id) return this.#messages;
-    else return this.#messages.find((message) => message.id === id);
+  async get(id) {
+    if (!id) return await this.#db.query("SELECT * FROM message");
+    else return await this.#db.query("SELECT * FROM message WHERE id=$1", [id]);
   }
-  add({ text, user }) {
-    this.#messages.push({
-      text,
-      user,
-      date: new Date(),
-      id: this.#idCounter,
-    });
-    this.#idCounter++;
+  async add({ text, user }) {
+    console.log(new Date().toISOString());
+
+    await this.#db.query(
+      "INSERT INTO message (text, username, date) VALUES ($1, $2, $3)",
+      [text, user, new Date().toISOString()]
+    );
   }
-  remove(id) {
-    this.#messages = this.#messages.filter((message) => message.id !== id);
+  async remove(id) {
+    await this.#db.query("DELETE FROM message WHERE id = $1", [id]);
   }
-  update(id, newText) {
-    this.#messages.forEach((message) => {
-      if (message.id === id) message.text = newText;
-    });
+  async update(id, newText) {
+    await this.#db.query("UPDATE message SET text=$1 WHERE id=$2", [
+      id,
+      newText,
+    ]);
   }
 }
-module.exports = MessageModel;
+module.exports = new MessageModel(db);
